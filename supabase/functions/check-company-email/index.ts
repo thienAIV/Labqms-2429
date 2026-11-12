@@ -1,0 +1,2 @@
+import { serve } from 'https://deno.land/std@0.224.0/http/server.ts';
+serve(async(req)=>{try{const{email}=await req.json();const valid=typeof email==='string'&&email.toLowerCase().endsWith('@sungrouphospital.com');return new Response(JSON.stringify({valid}),{status:valid?200:400,headers:{'content-type':'application/json'}})}catch{return new Response(JSON.stringify({valid:false,error:'Invalid request'}),{status:400,headers:{'content-type':'application/json'}})}});
