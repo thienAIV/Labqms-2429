@@ -1,0 +1,6 @@
+const DB='labqms-offline'; const STORE='pending-submissions';
+export type PendingSubmission={id:string;createdAt:string;payload:unknown;attempts:number;lastError?:string};
+function openDB():Promise<IDBDatabase>{return new Promise((resolve,reject)=>{const req=indexedDB.open(DB,1);req.onupgradeneeded=()=>{if(!req.result.objectStoreNames.contains(STORE))req.result.createObjectStore(STORE,{keyPath:'id'})};req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error)})}
+export async function enqueue(payload:unknown){const db=await openDB();const item:PendingSubmission={id:crypto.randomUUID(),createdAt:new Date().toISOString(),payload,attempts:0};await new Promise<void>((resolve,reject)=>{const tx=db.transaction(STORE,'readwrite');tx.objectStore(STORE).put(item);tx.oncomplete=()=>resolve();tx.onerror=()=>reject(tx.error)});return item.id}
+export async function pending():Promise<PendingSubmission[]>{const db=await openDB();return new Promise((resolve,reject)=>{const r=db.transaction(STORE).objectStore(STORE).getAll();r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)})}
+export async function remove(id:string){const db=await openDB();await new Promise<void>((resolve,reject)=>{const tx=db.transaction(STORE,'readwrite');tx.objectStore(STORE).delete(id);tx.oncomplete=()=>resolve();tx.onerror=()=>reject(tx.error)})}
