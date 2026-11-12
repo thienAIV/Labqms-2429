@@ -1,3 +1,11 @@
+## Changelog
+
+### 1.2.0-rc.1
+- Bổ sung provenance cho tiêu chí, review/approval tài liệu và hardening audit.
+- Bổ sung CSV trong private bucket.
+- Bổ sung tài liệu triển khai, quản trị, người dùng, ma trận quyền, audit và test report.
+- Ghi rõ các module chưa triển khai, không trình bày như đã hoạt động.
+
 # Changelog
 ## 1.0.0-rc.1
 - Hoàn thiện schema hồ sơ, đánh giá, CAPA, biểu mẫu, QR, thông báo và AI review.
