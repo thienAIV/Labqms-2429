@@ -1,5 +1,21 @@
 ## Changelog
 
+### 1.2.0-rc.4
+- Thêm Edge Function create-document-signed-url.
+- Signed URL giới hạn 60–900 giây, chỉ phát hành sau khi RLS cho phép đọc document_versions.
+- Ghi audit log khi cấp signed URL.
+
+
+### 1.2.0-rc.3
+- Bổ sung migration 0012 cho record_files và record_signatures.
+- Chỉ cấp SELECT theo organization/laboratory thông qua bản ghi cha; không mở quyền ghi hoặc xóa.
+
+
+### 1.2.0-rc.2
+- Bổ sung migration 0011 với các SELECT policy còn thiếu, giới hạn theo organization/laboratory.
+- Migration idempotent, không xóa dữ liệu và không mở quyền ghi.
+
+
 ### 1.2.0-rc.1
 - Bổ sung provenance cho tiêu chí, review/approval tài liệu và hardening audit.
 - Bổ sung CSV trong private bucket.
