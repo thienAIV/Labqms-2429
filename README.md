@@ -1,11 +1,14 @@
-# LabQMS 2429 v1.1.0
-Ứng dụng React/TypeScript/Vite kết nối Supabase cho Bệnh Viện Mặt Trời Phú Quốc - Khoa Xét Nghiệm.
+# LabQMS 2429 v2.0.0-rc.1
+Ứng dụng web độc lập React/TypeScript/Vite + Supabase. Không chứa dữ liệu pháp lý 2429 chưa xác minh, khóa bí mật hoặc dữ liệu demo trình bày như thật.
 
-## Bổ sung v1.1
-- Dashboard truy vấn dữ liệu thật.
-- Quản trị và phê duyệt người dùng bằng RPC có kiểm tra quyền.
-- Danh mục tài liệu thật, tạo bản nháp trong phạm vi đơn vị.
-- Ghi nhận sự không phù hợp và danh sách CAPA.
-- Migration 0009 hoàn thiện phạm vi người dùng và policy đọc CAPA.
+## Chạy
+`npm install` → tạo `.env.local` từ `.env.example` → `npm run dev`.
 
-Chạy migration 0009 sau 0001-0008. Không đưa `.env`, service role key hoặc secret key lên GitHub.
+## Build
+`npm run build`.
+
+## Triển khai
+Vercel dùng Vite và hai biến `VITE_SUPABASE_URL`, `VITE_SUPABASE_PUBLISHABLE_KEY`. Supabase migrations chạy tuần tự; Edge Function deploy với JWT verification.
+
+## Giới hạn công bố
+QR camera, offline sync đầu-cuối, AI thật và báo cáo xuất file vẫn bị gắn nhãn chưa triển khai; không được tuyên bố đã hoạt động.
