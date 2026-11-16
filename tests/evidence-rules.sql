@@ -1,0 +1,10 @@
+-- Run on a test project only. Every scenario must be inside BEGIN/ROLLBACK.
+-- Expected protections:
+-- 1 CRITERION_NOT_VERIFIED when proposing score for unverified criterion.
+-- 2 Newly uploaded evidence status is automatic_check, never approved.
+-- 3 Missing file produces FILE_EXISTS=FAIL.
+-- 4 Expired/rejected/superseded evidence cannot satisfy mandatory requirement.
+-- 5 submit_expert_review raises SEPARATION_OF_DUTIES for owner.
+-- 6 submit_expert_review raises VALIDATION_FAILED while any rule has FAIL.
+-- 7 Only score_approvals.approved_score is official.
+-- Runtime fixtures require a test organization, lab, profiles and verified legal fixture approved by the business owner.
