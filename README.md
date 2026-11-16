@@ -1,2 +1,2 @@
-# Legal import workflow v2.4.0
-Run after migration 0019. This patch creates a staging and double-check workflow. It does not silently verify OCR data or expose it to official scoring before Super Admin approval.
+# LabQMS 2429 structural staging v2.4.1
+Apply after 0020. This is a safety-preserving intermediate migration, not the final legal-text import.
