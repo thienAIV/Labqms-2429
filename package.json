@@ -1,7 +1,7 @@
 {
   "name": "labqms-2429",
   "private": true,
-  "version": "2.5.1-rc.1",
+  "version": "2.5.3-rc.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
