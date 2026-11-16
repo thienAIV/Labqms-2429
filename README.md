@@ -1,14 +1,7 @@
-# LabQMS 2429 v2.0.0-rc.1
-Ứng dụng web độc lập React/TypeScript/Vite + Supabase. Không chứa dữ liệu pháp lý 2429 chưa xác minh, khóa bí mật hoặc dữ liệu demo trình bày như thật.
+# LabQMS 2429 legal patch v2.3.1
 
-## Chạy
-`npm install` → tạo `.env.local` từ `.env.example` → `npm run dev`.
+This patch registers the user-provided authoritative PDF, versions legal criteria, hardens partial scoring, and classifies approved assessments under the official 2429 thresholds and mandatory-star conditions.
 
-## Build
-`npm run build`.
+It intentionally does not mark OCR-extracted criterion text as verified. Full import must retain source page and be double-checked before `verified` status.
 
-## Triển khai
-Vercel dùng Vite và hai biến `VITE_SUPABASE_URL`, `VITE_SUPABASE_PUBLISHABLE_KEY`. Supabase migrations chạy tuần tự; Edge Function deploy với JWT verification.
-
-## Giới hạn công bố
-QR camera, offline sync đầu-cuối, AI thật và báo cáo xuất file vẫn bị gắn nhãn chưa triển khai; không được tuyên bố đã hoạt động.
+Apply after migrations 0018 and only after a successful clean Vercel build of the matching repository.

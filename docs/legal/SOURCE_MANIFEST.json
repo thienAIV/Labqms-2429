@@ -1,0 +1,13 @@
+{
+  "document_number": "2429/QD-BYT",
+  "issued_date": "2017-06-12",
+  "issuer": "Bo Y te",
+  "title": "Tieu chi danh gia muc chat luong phong xet nghiem y hoc",
+  "file": "QD-2429-QD-BYT-2017.pdf",
+  "sha256": "845139f4673a8d6e88cabd00cf572d7f80060aceb400dd26a99b932ace2f9be6",
+  "pages": 41,
+  "expected_chapters": 12,
+  "expected_criteria": 169,
+  "expected_max_score": 268,
+  "verification_state": "source_file_received_content_import_pending_double_check"
+}
