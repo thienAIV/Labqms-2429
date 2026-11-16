@@ -98,7 +98,7 @@ end$$;
 revoke all on function public.verify_2429_dataset(uuid) from public;grant execute on function public.verify_2429_dataset(uuid) to authenticated;
 
 insert into public.legal_sources(document_number,issued_date,issuer,title,source_file_name,source_sha256,page_count,expected_chapters,expected_criteria,expected_max_score,status,notes)
-values('2429/QĐ-BYT','2017-06-12','Bộ Y tế','Tiêu chí đánh giá mức chất lượng phòng xét nghiệm y học','QD-2429-QD-BYT-2017.pdf','$HASH',41,12,169,268,'received','PDF toàn văn do người dùng cung cấp; cần đối chiếu kép dữ liệu trích xuất trước khi chuyển verified.')
+values('2429/QĐ-BYT','2017-06-12','Bộ Y tế','Tiêu chí đánh giá mức chất lượng phòng xét nghiệm y học','QD-2429-QD-BYT-2017.pdf','845139f4673a8d6e88cabd00cf572d7f80060aceb400dd26a99b932ace2f9be6',41,12,169,268,'received','PDF toàn văn do người dùng cung cấp; cần đối chiếu kép dữ liệu trích xuất trước khi chuyển verified.')
 on conflict(source_sha256) do update set source_file_name=excluded.source_file_name,page_count=excluded.page_count,notes=excluded.notes;
 
 commit;
